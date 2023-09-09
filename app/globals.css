@@ -1,0 +1,59 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.header {
+  min-height: 8vh;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #0F2027;  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right, #2C5364, #203A43, #0F2027);  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, #2C5364, #203A43, #0F2027); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  color: white;
+  letter-spacing: 0.15em;
+  word-spacing: 0.5em;
+  font-size: 21px;
+  text-align: center;
+}
+
+.main-wrapper {
+  background: #0F2027; 
+  background: -webkit-linear-gradient(to right, #2C5364, #203A43, #0F2027); 
+  background: linear-gradient(to right, #2C5364, #203A43, #0F2027); 
+  height: 100%;
+  min-height: 92vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  row-gap: 2rem;
+  padding: 5rem;
+}
+
+
+
+.married-checkbox-label {
+  font-size: 17px;
+  color: white;
+}
+
+.agediv {
+  width: 100%;
+  min-width: 260px;
+  flex-direction: column;
+}
+
+.custom-radio-group {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+.custom-radio-group {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
