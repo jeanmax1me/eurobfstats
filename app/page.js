@@ -8,13 +8,34 @@ import LooksComponent from "./components/Looks/page";
 import IncomeComponent from "./components/Income/page";
 import { Button } from "@nextui-org/react";
 import { useAppContext } from "./components/AppContext";
+import { calculateRarity } from "./calculationsb.js";
+
 
 export default function Home() {
   const { state } = useAppContext();
 
   const handleCalculateRarity = () => {
-    console.log("test")
-  };
+      const {
+        minAge,
+        maxAge,
+        married,
+        minHeight,
+        minLooks,
+        minIncome,
+      } = state; 
+      // Call the calculateRarity function with the required parameters
+      const rarityResult = calculateRarity(
+        minAge,
+        maxAge,
+        married,
+        minHeight,
+        minLooks,
+        minIncome
+      );
+      // Log the result
+      console.log(`Rarity Result: ${rarityResult}`);
+    };
+  
 
   return (
     <div>
@@ -38,7 +59,7 @@ export default function Home() {
         <div className="container-income">
           <IncomeComponent />
         </div>
-        <div className="container-button">
+        <div className="container-button flex flex-col items-center gap-5">
           <div className="flex flex-wrap gap-4 items-center">
             <Button
               onClick={handleCalculateRarity}

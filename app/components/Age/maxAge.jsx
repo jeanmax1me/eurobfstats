@@ -1,8 +1,6 @@
-'use client';
 import React, { useState, useEffect } from "react";
 import { RadioGroup, Radio } from "@nextui-org/react";
-import { useAppContext, setmaxAge } from "../AppContext";
-
+import { useAppContext, setMaxAge } from "../AppContext";
 
 export default function Age() {
     const { state, dispatch } = useAppContext();
@@ -15,12 +13,12 @@ export default function Age() {
         setSelectedAgeIndex(selectedIndex);
     }, [maxAge, selectedIndex]);
 
-    const handlemaxAgeChange = (index) => {
+    const handleMaxAgeChange = (index) => {
         const selectedAge = availableAges[index];
         setSelectedAgeIndex(index);
 
-        // Dispatch the action to update maxHeight
-        dispatch(setmaxAge(selectedAge));
+        // Dispatch the action to update maxAge
+        dispatch(setMaxAge(selectedAge));
     };
 
     useEffect(() => {
@@ -38,7 +36,7 @@ export default function Age() {
                     key={age}
                     value={age}
                     data-selected={index === selectedAgeIndex}
-                    onChange={() => handlemaxAgeChange(index)}
+                    onChange={() => handleMaxAgeChange(index)}
                 >
                     {age}
                 </Radio>
