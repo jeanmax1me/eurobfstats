@@ -1,37 +1,53 @@
-import React from "react";
+'use client';
+import React, { useState, useEffect } from "react";
 import { RadioGroup, Radio } from "@nextui-org/react";
-import useSharedState from '../useSharedState'; // Import the shared state hook
+import { useAppContext, setMinIncome } from '../AppContext'; // Import the context and action creator
 
 export default function Income() {
-  const { minIncome, setMinIncome } = useSharedState(); // Get the minIncome and setMinIncome from shared state
+  const { state, dispatch } = useAppContext();
+  const { minIncome } = state;
 
-  // Function to handle changes in the minimum income selection
-  const handleMinIncomeChange = (value) => {
-    setMinIncome(value);
+  const availableIncomes = [
+    "15000", "20000", "25000", "30000", "40000", "50000",
+    "60000", "75000", "100000", "150000", "200000", "250000",
+    "300000", "400000", "500000"
+  ];
+
+  const selectedIndex = availableIncomes.indexOf(minIncome);
+  const [selectedIncomeIndex, setSelectedIncomeIndex] = useState(selectedIndex);
+
+  useEffect(() => {
+    setSelectedIncomeIndex(selectedIndex);
+  }, [minIncome, selectedIndex]);
+
+  const handleMinIncomeChange = (index) => {
+    const selectedIncome = availableIncomes[index];
+    setSelectedIncomeIndex(index);
+
+    // Dispatch the action to update minIncome
+    dispatch(setMinIncome(selectedIncome));
   };
+
+  useEffect(() => {
+    console.log("minIncome changed:", minIncome);
+  }, [minIncome]);
 
   return (
     <RadioGroup 
       className="custom-radio-group bg-[#E7F1FE] rounded-2xl p-3"
       label="Select his minimum income" 
       orientation="horizontal"
-      onChange={handleMinIncomeChange} // Update shared state on change
     >
-      <Radio value="15000">€15,000 per year</Radio>
-      <Radio value="20000">€20,000 per year</Radio>
-      <Radio value="25000">€25,000 per year</Radio>
-      <Radio value="30000">€30,000 per year</Radio>
-      <Radio value="40000">€40,000 per year</Radio>
-      <Radio value="50000">€50,000 per year</Radio>
-      <Radio value="60000">€60,000 per year</Radio>
-      <Radio value="75000">€75,000 per year</Radio>
-      <Radio value="100000">€100,000 per year</Radio>
-      <Radio value="150000">€150,000 per year</Radio>
-      <Radio value="200000">€200,000 per year</Radio>
-      <Radio value="250000">€250,000 per year</Radio>
-      <Radio value="300000">€300,000 per year</Radio>
-      <Radio value="400000">€400,000 per year</Radio>
-      <Radio value="500000">€500,000 per year</Radio>
+      {availableIncomes.map((income, index) => (
+        <Radio
+          key={income}
+          value={income}
+          data-selected={index === selectedIncomeIndex}
+          onChange={() => handleMinIncomeChange(index)}
+        >
+          €{income} per year
+        </Radio>
+      ))}
     </RadioGroup>
   );
 }

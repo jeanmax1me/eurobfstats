@@ -1,9 +1,11 @@
+'use client';
 import React, { useState, useEffect } from "react";
 import { RadioGroup, Radio } from "@nextui-org/react";
-import useSharedState from "../useSharedState";
+import { useAppContext, setMinHeight } from "../AppContext"; // Import the context and action creator
 
 export default function Height() {
-  const { minHeight, setMinHeight } = useSharedState();
+  const { state, dispatch } = useAppContext();
+  const { minHeight } = state;
   const availableHeights = ["160", "165", "170", "175", "180", "185", "190"];
   const selectedIndex = availableHeights.indexOf(minHeight);
   const [selectedHeightIndex, setSelectedHeightIndex] = useState(selectedIndex);
@@ -15,8 +17,9 @@ export default function Height() {
   const handleMinHeightChange = (index) => {
     const selectedHeight = availableHeights[index];
     setSelectedHeightIndex(index);
-    setMinHeight(selectedHeight);
-    console.log("test", selectedHeight, minHeight);
+
+    // Dispatch the action to update minHeight
+    dispatch(setMinHeight(selectedHeight));
   };
 
   useEffect(() => {

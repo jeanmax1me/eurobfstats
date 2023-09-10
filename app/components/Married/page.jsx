@@ -1,25 +1,37 @@
-import React from 'react';
+'use client';
+import React, { useState, useEffect } from 'react';
 import { Checkbox } from "@nextui-org/react";
-import useSharedState from '../useSharedState'; // Import the shared state hook
+import { useAppContext, setMarried } from '../AppContext';
 
-const Page = () => {
-  const { married, setMarried } = useSharedState(); // Get the married and setMarried from shared state
+const Married = () => {
+  const { state, dispatch } = useAppContext();
+  const { married } = state;
+
+  const [isChecked, setIsChecked] = useState(married);
 
   // Function to handle changes in the married checkbox
-  const handleMarriedChange = (checked) => {
-    setMarried(checked);
+  const handleMarriedChange = (event) => {
+    const checked = event.target.checked;
+    setIsChecked(checked);
+
+    // Dispatch the action to update married status
+    dispatch(setMarried(checked));
   };
+
+  useEffect(() => {
+    console.log("married changed:", married);
+  }, [married]);
 
   return (
     <div className="marriedmen">
       <label className="married-checkbox-label">
         <Checkbox 
-          defaultSelected={married} // Set the initial checked state from shared state
-          onChange={handleMarriedChange} // Update shared state on change
+          checked={isChecked}
+          onChange={handleMarriedChange} // Update local state on change
         /> Include married men?
       </label>
     </div>
   );
 };
 
-export default Page;
+export default Married;
