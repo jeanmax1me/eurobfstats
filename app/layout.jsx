@@ -31,12 +31,12 @@ export default function RootLayout({ children }) {
         />
         <meta
           property="og:image"
-          content="/logo.png"
+          content="https://european-boyfriend-rarity.vercel.app/logo.png"
 
         />
         <meta
           property="og:url"
-          content="URL of your page"
+          content="https://european-boyfriend-rarity.vercel.app/"
         />
         <meta property="og:type" content="website" />
 
@@ -54,9 +54,12 @@ export default function RootLayout({ children }) {
         />
         <meta
           name="twitter:image"
-          content="/logo.png"
-
+          content="https://european-boyfriend-rarity.vercel.app/logo.png"
         />
+        <link rel="canonical" href="https://european-boyfriend-rarity.vercel.app/" />
+        <meta name="author" content="jeanmax1me" />
+        <meta name="language" content="English" />
+        <meta name="robots" content="index, follow" />
         </head>
         <body>
           <Providers>
