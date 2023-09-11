@@ -22,8 +22,8 @@ function calculateAgeRangePercentage(minAge, maxAge) {
 function calculateLooksPercentage(minLooks) {
   minLooks = parseInt(minLooks);
   let looksResultPercentage = 0;
-console.log("test minlooks dans la function:", minLooks)
-  for (let looks = minLooks; looks <= 10; looks++) {
+
+  for (let looks = 1; looks < minLooks; looks++) {
     const looksString = looks.toString();
     if (percentageMappings.looks[looksString]) {
       looksResultPercentage += parseFloat(percentageMappings.looks[looksString]);
@@ -45,7 +45,7 @@ function calculateHeightPercentage(minHeight) {
   const heightString = minHeight.toString();
   if (!isNaN(percentageMappings.height[heightString])) {
     const heightPercentage = parseFloat(percentageMappings.height[heightString]);
-    return heightPercentage.toFixed(5);
+    return heightPercentage;
   }
   return "0.00000";
 }
@@ -55,7 +55,7 @@ function calculateIncomePercentage(minIncome) {
   const incomeString = minIncome.toString();
   if (!isNaN(percentageMappings.income[incomeString])) {
     const incomePercentage = parseFloat(percentageMappings.income[incomeString]);
-    return incomePercentage.toFixed(5);
+    return incomePercentage;
   }
   return "0.00000";
 }
@@ -100,6 +100,8 @@ minLooks = tempMinIncome;
 minIncome = tempMinHeight;
 minHeight = tempMinLooks;
 
+
+
 // Add console logs for the updated values
 console.log(`minLooks: ${minLooks}`);
 console.log(`minIncome: ${minIncome}`);
@@ -133,9 +135,18 @@ console.log(`minHeight: ${minHeight}`);
   rarityResult *= heightReduction;
 
   const rarityPercentage = (rarityResult * 100).toFixed(5);
-  const rarityFraction = `1 out of ${Math.round(1 / rarityResult).toLocaleString()} European citizens aged 18 to 65`;
+  const rarityFraction = `1 out of ${Math.round(1 / rarityResult).toLocaleString()} European men`;
 
   console.log(`Final Rarity Result: ${rarityResult}`);
 
-  return `${rarityPercentage}% / Your desired boyfriend is ${rarityFraction}`;
+  const percentage = (rarityResult * 100).toFixed(5);
+  const fraction = `1 out of ${Math.round(1 / rarityResult).toLocaleString()} European men`;
+
+  return {
+    rarityPercentage: percentage,
+    rarityFraction: fraction,
+  };  
 }
+
+ 
+
