@@ -12,9 +12,9 @@
   background: -webkit-linear-gradient(to right, #2C5364, #203A43, #0F2027);  /* Chrome 10-25, Safari 5.1-6 */
   background: linear-gradient(to right, #2C5364, #203A43, #0F2027); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
   color: white;
-  letter-spacing: 0.15em;
+  letter-spacing: 0.25em;
   word-spacing: 0.5em;
-  font-size: 21px;
+  font-size: 24px;
   text-align: center;
 }
 
@@ -44,3 +44,25 @@
   text-align: center;
 }
 
+.precisions {
+  visibility: hidden; 
+  position: absolute;
+}
+
+@media (min-width: 1350px) {
+  .precisions {
+  visibility: visible;
+  position: relative;
+}}
+
+@media (max-width: 700px) {
+  .popup {
+    width: 70%;
+  }
+}
+
+@media (max-width: 1349px) {
+  .popup {
+    height: auto;
+  }
+}
