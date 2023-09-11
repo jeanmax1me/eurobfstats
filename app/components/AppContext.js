@@ -11,7 +11,7 @@ const SET_MIN_INCOME = 'SET_MIN_INCOME';
 const initialState = {
   minAge: '',
   maxAge: '',
-  married: true,
+  married: false,
   minHeight: '',
   minLooks: '',
   minIncome: '',
