@@ -122,7 +122,7 @@ export default function Home() {
                 <div className="flex justify-center">
                   <button
                     onClick={handleHideResultsPopup}
-                    className="bg-blue-500 text-white px-4 py-2 rounded-md hover:bg-blue-600 transition duration-300"
+                    className="bg-blue-500 text-white px-10 py-2 rounded-xl hover:bg-blue-600 transition duration-300"
                   >
                     Close
                   </button>
