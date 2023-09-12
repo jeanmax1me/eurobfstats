@@ -52,4 +52,3 @@ Give the **European Boyfriend Rarity Calculator** a try and discover just how un
 
 ---
 
-Feel free to use this markdown structure for your project description. You can copy and paste it into your .md file and make any further adjustments as needed.
