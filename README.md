@@ -1,34 +1,24 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+European Boyfriend Rarity Calculator
+The European Boyfriend Rarity Calculator is a small project designed for a female audience interested in understanding the rarity of their criteria when searching for a boyfriend in Europe. Inspired by the "Female Delusion Calculator," which gained popularity in the USA, this web application offers a similar experience tailored to the European dating landscape.
 
-## Getting Started
+Key Features:
+Rarity Assessment: Users can input their preferences for various boyfriend criteria, such as age, marital status, physical appearance, income, height, and more.
 
-First, run the development server:
+Statistical Data: The application utilizes data from the Eurostat database, maintained by the European Commission. To simplify calculations, the data has been averaged while still providing estimations closely aligned with reality.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-```
+Age Range Insights: The age range feature provides insights into the percentage of men within a specified age range, allowing users to gauge the prevalence of potential partners in Europe.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Marital Status Analysis: Users can explore how age influences marital status among European men, helping them make informed decisions about their dating preferences.
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+Looks and Attractiveness: The application considers attractiveness on a standardized distribution, helping users understand how their chosen attractiveness scale aligns with European norms.
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+How It Works:
+Users input their desired criteria, including age preferences, marital status, minimum income, minimum height, and minimum looks.
 
-## Learn More
+The calculator processes these preferences and provides users with a rarity percentage and fraction, indicating how unique their preferences are within the European dating pool.
 
-To learn more about Next.js, take a look at the following resources:
+Users gain valuable insights into the rarity of their ideal European boyfriend based on their specific criteria.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+The European Boyfriend Rarity Calculator aims to empower users with data-driven insights to make informed decisions in their dating journey. It's a fun and informative tool for those curious about the uniqueness of their relationship preferences in the diverse European dating landscape.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+Give it a try and discover just how unique your ideal European boyfriend might be!
